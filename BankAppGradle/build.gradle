@@ -9,6 +9,7 @@
 
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
+apply plugin: 'sonar-runner'
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -36,4 +37,12 @@ dependencies {
 
 test wrapper(type: Warpper){
 	gradleVersion = '2.0'
+}
+
+sonarRunner{
+	sonarProperties{
+		property "sonar.projectName" "BankAppGradle"
+		sonar.projectKey "org.sonarqube:java-gradle-simple"
+		
+	}
 }
